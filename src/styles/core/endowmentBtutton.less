@@ -1,0 +1,94 @@
+//** Button box
+// --------------------------------------
+
+// Fixed bottom button
+.fixed-bottom-btn {
+    .fixed( );
+    bottom: 0;
+    width: 100%;
+    max-width: 640px;
+}
+
+// Horizontally button
+.btn-horizontally {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+// Button space-between
+.col-btn-two {
+    display: flex;
+    justify-content: space-between;
+}
+// ---------------------------------------------------------------
+
+
+//** Button details
+// --------------------------------------
+.btn-total {
+    .btn;
+    .button-size(0,0,18px,0);
+    .button-width( 50%, 60px, @font-size-bigger, 60px, 0);
+    background-color: #fff;
+    border: none;
+}
+
+.btn-hundred-percent {
+    display: block;
+    .btn;
+    .button-size( 0, 0 , 0, 0);
+    .button-width( 100%, 60px, @font-size-bigger, 60px, 0);
+    .button-variant( @btn-default-color, @brand-primary, @brand-primary);
+    border: none;
+}
+
+.btn-sub {
+    .btn;
+    .button-width( 272px, 50px, @font-size-bigger, 50px,30px);
+    .button-variant( @btn-default-color, @brand-primary, @brand-primary);
+    text-align: center;
+
+    &.not-click {
+        background-color: @btnbg-not-click;
+        color: @btntxt-not-click;
+        border-color: @btnbg-not-click;
+    }
+}
+
+.btn-remind-red {
+    .btn;
+    .button-width(75%, 46px, @font-size-bigger, 46px,30px);
+    .button-variant( #cc0000,@content-block,#cc0000);
+    display: flex;
+    justify-content: center;
+    &.pop-btn-canner {
+        .button-variant( @gray-dark,@content-block,@content-block);
+    }
+}
+
+.btn-remind-blue {
+    .btn;
+    .button-width(75%, 46px, @font-size-bigger, 46px,30px);
+    .button-variant( @brand-primary,@content-block,@brand-primary);
+    display: flex;
+    justify-content: center;
+}
+
+.btn-add-icon {
+    .btn;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .button-width(58px, 22px, @font-size-smaller, 22px,30px);
+    .button-variant(@brand-primary,@content-block,@brand-primary);
+    .add-icon-imgs {
+        .square(8px);
+        .img-retina('~images/add-icon.jpg'; 8px; 8px);
+    }
+}
+
+.not-click {
+    background-color: @btnbg-not-click;
+    color: @btntxt-not-click;
+}

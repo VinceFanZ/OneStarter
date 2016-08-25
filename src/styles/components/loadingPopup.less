@@ -1,0 +1,50 @@
+.loadingPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .square(132px);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, .85);
+  overflow: hidden;
+  z-index: 998;
+}
+.loadingPopup-default {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.loadingPopup-loader {
+  display: inline-block;
+  .square(54px);
+  .img-retina(@loading-handle-img, 54px, 54px);
+  animation: load .8s infinite linear;
+  transform: translateZ(0);
+}
+.loadingPopup-loader-success {
+  display: inline-block;
+  .square(54px);
+  .img-retina(@loading-handle-img-success, 54px, 54px);
+}
+.loadingPopup-loader-fail {
+  display: inline-block;
+  .square(54px);
+  .img-retina(@loading-handle-img-fail, 54px, 54px);
+}
+
+.loadingPopup-state {
+  text-align: center;
+  color: #fff;
+  font-size: @font-size-middle;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

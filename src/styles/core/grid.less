@@ -1,0 +1,206 @@
+//== Grid
+.grid-box {
+  position: relative;
+  width: 100%;
+  &::before {
+    .horizontal(#ccc);
+    top: -1px;
+  }
+}
+.row {
+  display: flex;
+  .make-row(@grid-bg, @grid-row-height, space-between);
+  & .col-both {
+    display: flex;
+    height: inherit;
+    align-items: center;
+  }
+  & .col-both:first-child {
+    .make-col-both-left(@grid-row-pd, @font-size-md, @grid-color-base);
+    // max-width: 35%;
+    .text-overflow();
+  }
+  & .col-both:last-child {
+    .make-col-both-right(@grid-row-pd, @font-size-lesser, @gray);
+    flex: 1;
+    justify-content: flex-end;
+  }
+  &::after {
+    .horizontal(#ccc);
+    bottom: 0;
+  }
+}
+
+.row-active {
+  padding:24px 0;
+  .act-row(@font-size-smaller; 42px);
+}
+
+.row-with-icon {
+  display: flex;
+  .make-row(@grid-bg, @grid-row1-height, initial);
+  & .col-both {
+    display: flex;
+    height: inherit;
+    align-items: center;
+  }
+  & .addIcon {
+    width: 50px;
+    .img-retina('~images/add_icon.png'; 28px; auto);
+    background-position: center center;
+    &::after {
+      .horizontal(#ccc);
+      bottom: 0;
+    }
+  }
+  & .content {
+    .contents();
+  }
+}
+//** detail 左右布局
+
+.row-xs-2 {
+  display: flex;
+  .make-row(@grid-bg, 74px, initial);
+  .col-both{
+    display: flex;
+    &:first-child {
+      width: 50%;
+      .p {
+        max-width: 50%;
+        .absolute(16px; 0; 20px; 0);
+        font-size: @font-size-small;
+        color: @grid-color-light;
+      }
+      .h2 {
+        max-width: 50%;
+        .absolute(38px; 0; 20px; 0);
+        font-size: @font-size-middle;
+        color: @btn-default-color;
+      }
+    }
+    &:last-child{
+      max-width:50%;
+      .make-col-both-right(20px, @font-size-big, @btn-default-color);
+      flex: 1;
+      justify-content: flex-end;
+      .btn{
+        width: 80%;
+        height: 42px;
+        color: @btn-default-color;
+        background-color: transparent;
+        border-color: @btn-default-border;
+      }
+      a.btn{
+        height: auto;
+      }
+      .btn-hollow{
+        color: @gray-obvious;
+        border-color: @gray-obvious;
+      }
+    }
+  }
+}
+
+//** list-grid
+.list-grid-box {
+  position: relative;
+  margin-top: 52px;
+  background-color: @grid-bg;
+  &::before {
+    .horizontal(#ccc);
+    top: 0;
+  }
+  &::after {
+    .horizontal(#ccc);
+    bottom: 0;
+  }
+}
+.row-list {
+  position: relative;
+  margin-left: 15px;
+  padding-top: 15px;
+  &::after {
+    .horizontal(#ccc);
+    bottom: 0;
+  }
+  & .pro-name {
+    font-size: @font-size-md;
+    color: @grid-color-base;
+    margin-bottom: 7px;
+  }
+  & .pro-introduce {
+    font-size: @font-size-small;
+    color: @grid-color-light;
+  }
+  & .pro-item {
+    position: relative;
+    display: flex;
+    height: 43px;
+    align-items: stretch;
+    padding: 15px 23px 13px 0;
+    & .item-left, & .item-content, & .item-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: @grid-color-light;
+    }
+    & .p1 {
+      margin-bottom: 10px;
+      color: #f41;
+      font-size: @font-size-md;
+    }
+    & .p2 {
+      font-size: @font-size-lesser;
+    }
+    & .item-left, & .item-right {
+      flex: 1.1;
+    }
+    & .item-left {
+      align-items: flex-start;
+    }
+    & .line {
+      .size(1px, 200%);
+      background-color: #e6e6e6;
+      transform-origin: top;
+      transform: scale3d(.5,.5,.5);
+    }
+    & .arrow {
+      position: absolute;
+      top: 38%;
+      right: 15px;
+      display: inline-block;
+      .size(10px, 15px);
+      .img-retina("~images/arrow_right.png",10px,15px);
+    }
+  }
+
+  & .presell {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 8px;
+    background-color: #f5f5f5;
+    color: @grid-color-light;
+    font-size: @font-size-smaller;
+    border-radius: 10px;
+  }
+  & .sectorProg {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+  }
+}
+
+.list-grid-box .row-list{
+  &:last-child {
+    &::after {
+      border: none;
+    }
+  }
+}

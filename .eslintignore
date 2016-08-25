@@ -1,0 +1,6 @@
+**/dist/**
+**/node_modules/**
+**/webpack.config*.js
+**/webpack.deploy*.js
+**/mock/*.js
+**/server.js

@@ -1,0 +1,31 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+      "react"
+  ],
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "rules": {
+    "strict": 0,
+    "comma-dangle": 0,
+    "semi": [ 2, "never"],
+    "func-names": 0,
+    "max-len": [2, 300, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": true
+    }],
+    "global-require": 0,
+    "no-extra-boolean-cast": 0,
+    "react/self-closing-comp": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": 0
+  },
+  "settings":{
+    "import/resolver": "webpack"
+  },
+  "env": {
+    "browser": true
+  }
+}

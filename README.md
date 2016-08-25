@@ -1,0 +1,5 @@
+## OneStarter
+
+----
+
+React + Redux + webpack

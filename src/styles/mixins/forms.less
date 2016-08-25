@@ -1,0 +1,24 @@
+//== Input
+//******* input text
+.input-size ( @height:auto, @font-size:@font-size-bigger, @color, @border-color, @radius:0, @line-height:1, @padding-vertical:0, @padding-horizontal:0) {
+    height: @height;
+    line-height: @line-height;
+    padding: @padding-vertical @padding-horizontal;
+    border: 1px solid @border-color;
+    border-radius: @radius;
+    font-size: @font-size;
+    color: @color;
+}
+
+//****** select
+.select-size ( @height:auto, @font-size:@font-size-bigger, @color, @border-color, @radius:0, @line-height:1, @bgcolor, @padding-vertical:0, @padding-horizontal:0) {
+    height: @height;
+    line-height: @line-height;
+    padding: @padding-vertical @padding-horizontal;
+    border: 1px solid @border-color;
+    border-radius: @radius;
+    background: @bgcolor;
+    font-size: @font-size;
+    color: @color;
+    appearance:none;
+}

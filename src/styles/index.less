@@ -1,0 +1,620 @@
+// Vanellus
+// --------------------------------------------------
+@import "vanellus.less";
+.page-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.view-container {
+  padding-top: @brand-title-height;
+}
+.vali-card-protocol {
+  margin-top: 25px;
+  line-height: 23px;
+  margin-left: @font-size-small;
+  font-size: @font-size-small;
+}
+.checkbox-lebel {
+  .checkbox-lebel(1; inline-flex; 21px; 21px; @body-bg; 5px; #fff);
+  border: 1px solid @checkbox-default-bg;
+}
+.protocol-jomp {
+  color: @brand-jomp;
+}
+
+.popup-box .title.phone {
+  margin-top: 5px;
+}
+.popup-box .title.trading {
+  padding-bottom: 5px;
+}
+.popup-box .title.warning {
+  padding: 10px 0;
+}
+.popup-password-err {
+  padding-top: 5px;
+  text-align: center;
+  font-size: @font-size-small;
+  color: #ccc;
+}
+.popup-warning {
+  margin: 20px 0 30px;
+  padding: 0 5px;
+  text-align: center;
+  font-size: @font-size-small;
+  line-height: 1.2;
+  color: #aaa;
+}
+.row.phone-verification {
+  margin: 0;
+  &::before {
+    border: none;
+  }
+}
+.con-psd-tit {
+  margin-top: 37px;
+  margin-bottom: @font-size-big;
+  text-align: center;
+  font-size: @font-size-lesser;
+  color: @grid-color-light;
+}
+.subhead {
+  color: @brand-jomp;
+  font-size: @font-size-smaller;
+}
+.no-checked {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: @grid-row-pd;
+  .size(8px, 100%);
+  .img-retina( '~images/arrow_right.png';
+  8px;
+  14px);
+  background-position: center center;
+}
+.bind-card-head {
+  margin: 21px 0 10px 14px;
+  font-size: @font-size-lesser;
+  color: @grid-color-light;
+}
+.row-cen-success {
+  .con-row(37px; 15px; #5f5f5f;  '~images/icon_success.png';
+  37px;
+  37px;
+  37px;
+  @body-bg);
+}
+.row-cen-fail {
+  .con-row(37px; 15px; #5f5f5f;  '~images/icon_fail.png';
+  37px;
+  37px;
+  37px;
+  @body-bg);
+}
+.mt20-block {
+  margin-top: 20px;
+  width: 100%;
+  display: block;
+}
+.col-jomp {
+  color: @brand-jomp;
+}
+.gTitle {
+  color: @gray-dark;
+  font-size: @font-size-middle;
+  text-align: center;
+  padding: 20px 0;
+}
+.protocol-text {
+  margin: 0 17px;
+  padding-bottom: 17px;
+  color: #404040;
+  font-size: @font-size-lesser;
+}
+.protocol-subhead {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 15px;
+}
+.protocol-content {
+  text-indent: 13px;
+  line-height: 17px;
+}
+.addCard-tip {
+  padding: 15px 10px 0;
+  font-size: @font-size-smaller;
+  line-height: 1.2;
+  color: @gray;
+}
+//-------付款详情---------------------------------
+.money,
+.pay-detalied,
+.pay-money {
+  margin-top: 18px;
+  display: block;
+  width: 100%;
+  .text-center;
+  color: @gray-base;
+  font-size: 24px;
+}
+.pay-money {
+  margin-top: 36px;
+  font-size: @font-size-small;
+  color: @gray-dark;
+}
+.pay-form {
+  margin: 42px 0 18px 0;
+  position: relative;
+  .remind-icon-arrow {
+    position: absolute;
+    top: 26px;
+    right: 26px;
+    width: 15px;
+    height: 27px;
+    display: block;
+    background-image: url("~images/arrow_right.png");
+    background-size: contain;
+  }
+}
+.pay-form-item {
+  position: relative;
+  padding: 26px;
+  padding-right: 45px;
+  font-size: 26px;
+  .text-overflow();
+  &::before {
+    .horizontal(#d7d7d7);
+    top: 0;
+  }
+  &::after {
+    .horizontal(#d7d7d7);
+    bottom: 0;
+  }
+}
+.pay-from_btn {
+  margin-top: 53px;
+}
+//-------付款详情结束---------------------------------
+@processCls: process;
+.@{processCls} {
+  width: 90%;
+  padding: 0 5%;
+  margin-top: 15px;
+  padding-bottom: 50px;
+  font-size: @font-size-lesser;
+  z-index: 10;
+  &-form {
+    padding-bottom: 18px;
+    & li {
+      position: relative;
+      width: 100%;
+      margin-top: 24px;
+      & .input-tit {
+        .absolute( -9px, initial, 8px );
+        padding: 0 5px;
+        height: 18px;
+        display: none;
+        line-height: 18px;
+        font-size: @font-size-middle;
+        color: @gray;
+        background-color: #fff;
+        animation: input-fade-in 0.5s cubic-bezier(.25, .46, .45, .94);
+      }
+      & .input-tit--static {
+        .absolute( -9px, initial, 8px );
+        padding: 0 5px;
+        height: 18px;
+        display: none;
+        line-height: 18px;
+        font-size: @font-size-middle;
+        color: @gray;
+        background-color: #fff;
+      }
+      & .tips-gray {
+        margin-top: 8px;
+        display: inline-block;
+        color: #999;
+      }
+
+      & .vcode {
+        .absolute(12px, 0);
+        height: 30px;
+        padding: 0 4%;
+        line-height: 30px;
+        font-size: @font-size-bigger;
+        border-left: 1px solid #aaa;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+      } // 验证码
+
+      //问号的icon
+      & .text-question {
+        height: 24px;
+        & i {
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          font-size: 14px;
+          .text-center;
+          border: 1px solid #333;
+          border-radius: 50%;
+          margin-top: 8px;
+          margin-left: 5px;
+        }
+      }
+      //输入错误提示
+      & .remind-text {
+        .absolute( -35px, 0px);
+        z-index: 10;
+        height: 40px;
+        padding: 0 18px;
+        border-radius: 6px;
+        line-height: 40px;
+        font-size: @font-size-middle;
+        color: #fff;
+        background: rgba( 0, 0, 0, .85);
+        // display: block;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          right: 16px;
+          z-index: 9;
+          width: 0;
+          height: 0;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-top: 8px solid rgba( 0, 0, 0, .85);
+        }
+      }
+      //提交添加后校验不对的错误提示结束
+      & .remind-icon {
+        .absolute( 15px, 12px);
+        width: 24px;
+        height: 24px;
+        &-arrow {
+          width: 0;
+          height: 0;
+          margin-top: 8px;
+          margin-left: 6px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 8px solid #999;
+          display: block;
+        }
+      }
+      & .remind-icon-error {
+        display: block;
+        .absolute( 0, 0);
+        .size(44px, 54px);
+        .icon-error;
+        background-position: center;
+
+      }
+      & .remind-icon-clear {
+        display: block;
+        .absolute( 0, 40px);
+        .size(24px, 54px);
+        .icon-clear;
+        background-position: center;
+      }
+      & .remind-icon-eyes-gray {
+        display: block;
+        .absolute( 0, 5px);
+        .size(35px, 54px);
+        .icon-eyes-gray;
+        background-position: center;
+      }
+      & .remind-icon-eyes-blue {
+        display: block;
+        .absolute( 0, 5px);
+        .size(35px, 54px);
+        .icon-eyes-blue;
+        background-position: center;
+      }
+      .input-code {
+        width: 40%;
+        height: 100%;
+        .absolute(0,0);
+        .check-num {
+          display: block;
+          font-size: @font-size-bigger;
+          color: @gray-base;
+          .text-center;
+          line-height: 30px;
+          margin-top: 13px;
+          border-left: 1px solid #666;
+        }
+      }
+    }
+  }
+  // 复选框切换
+  .process-agree {
+    width: 100%;
+    height: 21px;
+    margin-bottom: 24px;
+    position: relative;
+    & label {
+      //   display: inline-block;
+      float: left;
+    }
+    & span {
+      float: left;
+      color: @gray;
+      font-size: @font-size-middle;
+      line-height: 20px;
+    }
+    & .agreement {
+      color: @gray-base;
+    }
+  }
+  .btn-horizontally {
+    position: relative;
+    .input-code1 {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, .5);
+      .absolute(0,0);
+    }
+  }
+}
+.process__subTitle {
+  margin-top: 45px;
+  margin-bottom: 40px;
+  font-size: @font-size-bigger;
+  color: @gray-base;
+}
+.process-form-tit {
+  text-align: center;
+  font-size: @font-size-md;
+  color: @gray;
+}
+//问号提示文本
+.process1 {
+  z-index: 11;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: none;
+  & p {
+    margin: 20px 0;
+    font-size: @font-size-big;
+    color: @gray-dark;
+    line-height: 26px;
+  }
+  & .btn-remind-blue {
+    margin-left: 12%;
+  }
+}
+
+// ......选择支付方式样式开始.......................
+.process-li {
+  &::before {
+    .horizontal(@gray-obvious);
+  }
+  &::after {
+    .horizontal(@gray-obvious);
+  }
+  background-color: #fff;
+  padding-left: 5%;
+  margin: 15px 0 50px;
+  font-size: 13px;
+  & div {
+    height: 72px;
+    padding: 0 5% 0 0;
+    position: relative;
+    &::before {
+      .horizontal(@gray-obvious);
+    }
+    & span {
+      line-height: 72px;
+      color: @gray-base;
+      font-size: 18px;
+      margin-left: 10px;
+      float: left;
+    }
+    & img {
+      margin-top: 24px;
+      width: 20px;
+      height: 20px;
+      float: left;
+      background-color: #ccc;
+    }
+    & .sure-y {
+      margin-top: 24px;
+      width: 20px;
+      height: 20px;
+      background-color: #ccc;
+      float: right;
+      padding-right: 0;
+      display: none;
+      &::before {
+        content: '';
+        border-bottom: none;
+      }
+    }
+    &:first-child {
+      &::before {
+        border-bottom: none;
+      }
+    }
+    &:nth-child(9) {
+      position: relative;
+      height: 84px;
+      & p {
+        color: @gray;
+        font-size: @font-size-small;
+        margin: 54px 0 0 30px;
+        .absolute(none,none,0);
+      }
+      & p:nth-child(4) {
+        display: none;
+      }
+      // 余额不足时的提示
+      .remind-text2 {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate( -50%, -50%);
+        height: 40px;
+        padding: 0 16px;
+        border-radius: 6px;
+        line-height: 40px;
+        font-size: @font-size-middle;
+        color: #fff;
+        background: rgba( 0, 0, 0, .85);
+        display: none;
+      }
+      // 未开通是的遮罩
+      & .remind-text3 {
+        .absolute(0,0,0,0);
+        background-color: rgba(255, 255, 255, .6);
+        display: none;
+      }
+    }
+    &:last-child {
+      & .sure-y {
+        .arrow-right;
+        .text-center;
+        display: block;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+//-------------------反馈结果页--------------------
+@resultCls: result;
+.@{resultCls} {
+    min-height: 300px;
+    &-fail {
+        .img-retina('~images/fail.png'; 140px; auto);
+        background-position: center 60%;
+    }
+    &-success {
+        .img-retina('~images/success.png'; 130px; auto);
+        background-position: center 60%;
+    }
+    &-welding {
+        .img-retina('~images/welding.png'; 136px; auto);
+        background-position: center 60%;
+    }
+}
+.pay-success{
+    color: @gray-base;
+    .text-center;
+    font-size: 20px;
+}
+.success-num{
+    .text-center;
+    margin: 18px 0 30px 0;
+    span,p{
+        display: inline-block;
+        color: @gray;
+        font-size: @font-size-small;
+        line-height: 1.3;
+    }
+    .tip{
+      padding: 0 10px;
+      text-align: left;
+    }
+}
+
+.bg-body-bg {
+  background-color: @body-bg;
+}
+
+.process-form.upgrade {
+  padding: 0 10px 24px 10px;
+}
+.btn-upgrade {
+  border: none;
+  background: #fff;
+  color: #999;
+}
+.btn-upgrade-dis {
+  border: none;
+  background: #fff;
+  color: #999;
+  opacity: .3;
+}
+
+.financing__copy_first-pay {
+  padding: 0 26px;
+  font-size: @font-size-smaller;
+  color: @gray-dark;
+  & .tip {
+    color: #1da4f9;
+    float: right;
+  }
+}
+.financing__copy_pay {
+  position: absolute;
+  bottom: 51px;
+  width: 100%;
+  text-align: center;
+  font-size: @font-size-smaller;
+  color: @gray-dark;
+  & .tip {
+    color: #1da4f9;
+  }
+}
+
+.check__wrap {
+  padding-top: 86px;
+}
+.check__sub-title {
+  margin-bottom: 35px;
+  text-align: center;
+  font-size: @font-size-middle;
+  color: @gray;
+}
+
+.auth-pwd__wrap {
+  padding-top: 35px;
+}
+.auth-pwd__sub-title {
+  margin-bottom: 35px;
+  text-align: center;
+  font-size: @font-size-middle;
+  color: @gray;
+}
+.auth-pwd__btn {
+  margin-top: 36px;
+}
+
+// Font color
+.c_666 { color: #666; }
+.c_999 { color: #999; }
+.c_ccc { color: #ccc; }
+
+// Padding
+.pa-t10{ padding-top: 10px; }
+.pa-b72{ padding-bottom: 72px;}
+.pa-b30 { padding-bottom: 30px; }
+
+
+// Margin
+.ma-t3 { margin-top: 3px; }
+.ma-t25 { margin-top: 25px; }
+.ma-t10 { margin-top: 10px; }
+.ma-t18 { margin-top: 18px; }
+.ma-l9 { margin-left: 9px; }
+.ma-t40 { margin-top: @font-size-bigger * 2; }
+.ma-l9 { margin-left: 9px; }
+.ma-t5 { margin-top: 5px; }
+.ma-tb30 { margin: 30px 0; }
+.ma-tb10 { margin: 10px 0; }
+.ma-tb30 { margin: 30px 0; }
+.w-80-pct {
+  max-width: 80%;
+  .text-overflow();
+}
+
+.hide { display: none; }
+.align-center { text-align: center; }

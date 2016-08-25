@@ -1,0 +1,59 @@
+// Input style
+// -----------------------------------------
+@inputCls: input-style;
+.@{inputCls} {
+    & {
+      box-sizing: border-box;
+      width: 100%;
+      -webkit-appearance: none;
+      .input-size(54px, @font-size-bigger, @gray-base, #aaa, 6px, normal, 16px, 4%);
+      &.disable {
+        color: #999;
+      }
+    }
+    &-foucs {
+        border-color: @brand-primary;
+    }
+    &-error {
+        border-color: @brand-remind;
+    }
+}
+
+// Select style
+// -----------------------------------------
+@selectCls: select-style;
+.@{selectCls} {
+    & {
+        width: 100%;
+        .select-size(54px, @font-size-bigger, #000, #aaa, 6px, 54px, #fff, 0, 4%);
+    }
+}
+
+// Checkbox style
+// -----------------------------------------
+.checkbox-default {
+    .square(21px);
+    .button-variant( @gray-dark,@content-block,@gray);
+    border: 1px solid @gray;
+    .border-alls(5px);
+    margin-right: 12px;
+}
+
+.checkbox-disable {
+    border: 1px solid #ccc;
+}
+
+.checkbox-checked {
+    &:checked + .checkbox-default {
+        .button-variant( @gray-dark,#3399ff,#3399ff);
+        border: 1px solid #3399ff;
+        .img-retina('~images/radio-checkd-icon.png'; 16p; 10px);
+        background-position: center;
+        background-size: 12px 10px;
+    }
+}
+.input-date{
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+}

@@ -1,0 +1,177 @@
+@bankCards: bankCards;
+.@{bankCards} {
+    @titHeight: 42px;
+    @m-lift: 50px;
+    @m-right: 20px;
+    @iconWidth: 42px;
+    .borderBottom(@color: #dadada) {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 200%;
+        border-bottom: 1px solid @color;
+        transform-origin: 0 0;
+        transform: scale3D(.5, .5, .5);
+    }
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    & {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+        width: 100%;
+        background-color: #fff;
+    }
+    &-box {
+        position: absolute;
+        top: 38px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: scroll;
+    }
+    &.actived {
+        animation: fadeInUp 0.3s 0.2s ease both;
+    }
+    &.removed {
+        animation: fadeOutDown 0.3s 0.3s ease both;
+    }
+    &.hidden {
+        display: none;
+    }
+    &-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        height: @titHeight;
+        line-height: @titHeight;
+        font-size: 18px;
+        //border-bottom: @border;
+        &::before {
+            .borderBottom();
+        }
+    }
+
+    &-back {
+        position: absolute;
+        left: 10px;
+        width: @titHeight;
+        height: @titHeight;
+        font-size: 16px;
+    }
+    &-item {
+        position: relative;
+        padding: 12px 0;
+        margin-left: 17px;
+        overflow: hidden;
+        &::before {
+            .borderBottom();
+        }
+        &-dis {
+          opacity: .7;
+        }
+    }
+    &-fot {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    &-icon {
+        display: block;
+        float: left;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+    }
+    &-icon img {
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-addIcon {
+        background-image: url(~images/add_icon.png);
+        background-repeat: no-repeat;
+        background-size: 90% 90%;
+        background-position: center;
+        background-color: transparent;
+    }
+    &-summary {
+        margin-left: 36px;
+        margin-right: @m-right;
+        font-size: @font-size-big;
+        color: #4d4d4d;
+        height: 20px;
+        line-height: 20px;
+        .ellipsis;
+    }
+    &-quota {
+        margin-left: 36px;
+        color: #999;
+        font-size: 12px;
+        margin-top: 8px;
+    }
+    &-surplus {
+        margin-left: @m-lift;
+        margin-right: @m-right;
+        font-size: @font-size-smaller;
+        color: #717171;
+        height: @iconWidth / 2;
+        line-height: 1.8;
+        .ellipsis;
+    }
+    &-check {
+        display: block;
+        float: right;
+        width: 18px;
+        height: 8px;
+        margin-right: 12px;
+        border-left: 2px solid #3399ff;
+        border-bottom: 2px solid #3399ff;
+        transform: translateY(15px) rotateZ(-45deg);
+    }
+    &-addBtn {
+        margin-left: 17px;
+        font-size: @font-size-big;
+        color: #4d4d4d;
+        // height: @iconWidth;
+        // line-height: @iconWidth;
+    }
+    &-newCard {
+        position: relative;
+        font-size: 18px;
+        padding: 18px 0;
+        background: url(~images/arrow_right.png) 96% center no-repeat;
+        background-size: 10px auto;
+        &::after {
+            .horizontal(#d7d7d7);
+            bottom: 0;
+        }
+    }
+    &-type-title {
+        font-size: 12px;
+        color: #999;
+        margin-left: 17px;
+        padding: 12px 0 10px 0;
+    }
+    &-type-line {
+        position: relative;
+        &::after {
+            .horizontal(#d7d7d7);
+            bottom: 0;
+        }
+    }
+}
