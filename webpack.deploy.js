@@ -11,7 +11,6 @@ var config = {
 	entry: {
 		app: path.resolve(__dirname, 'src/index.js'),
 		shared: [
-			'babel-polyfill',
 			'react',
 			'react-router',
 			'react-redux',
